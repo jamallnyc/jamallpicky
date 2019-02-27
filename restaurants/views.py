@@ -8,6 +8,8 @@ from django.views import View
 from .models import RestaurantLocation
 from .forms import RestaurantLocationCreateForm
 
+
+
 # Create your views here.
 class RestaurantListView(ListView):
     template_name = 'restaurants/diner.html'

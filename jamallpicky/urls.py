@@ -17,8 +17,13 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import TemplateView
 
+#from django.contrib.auth import views as auth_views
+#this is too much, instead you should do #from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', LoginView.as_view(), name='login'),
     path('restaurants/', include('restaurants.urls')),
     path('', TemplateView.as_view(template_name='home.html')),
     path('about', TemplateView.as_view(template_name='about.html')),
